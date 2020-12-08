@@ -42,6 +42,6 @@ jobs:
         env:
           CI_COMMIT: build
         with:
-          # git_push_flags: '-v'
+          git_push_flags: '--force'
           git_remote_url: 'ssh://dokku@${{ secrets.DOKKU_HOST }}/website'
           ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
