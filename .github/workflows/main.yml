@@ -29,6 +29,8 @@ jobs:
         run: hugo --minify
       - name: Prepare deployment
         run: |
+          git config user.email "githubfo@supcik.net"
+          git config user.name "Github action"
           git checkout --orphan build
           git rm -rf --cached .
           cp deployment/Dockerfile .
