@@ -44,6 +44,6 @@ jobs:
           GIT_SSH_COMMAND: 'ssh -vvv'
         with:
           git_push_flags: '-vvv'
-          ci_branch_name: build
+          branch: build:master
           git_remote_url: 'ssh://dokku@home.supcik.net:25022/website'
           ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
