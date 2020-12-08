@@ -37,6 +37,7 @@ jobs:
           cp deployment/Caddyfile .
           git add -f Dockerfile Caddyfile public/
           git commit -m "prepare deployment"
+          git remote add dokku dokku@home.supcik.net:website
       - name: Push to dokku
         uses: dokku/github-action@0.0.7
         env:
