@@ -38,7 +38,7 @@ jobs:
           git add -f Dockerfile Caddyfile public/
           git commit -m "prepare deployment"
       - name: Push to dokku
-        uses: supcik/github-action@master
+        uses: supcik/dokku-deploy-github-action-official@master
         env:
           CI_COMMIT: build
         with:
