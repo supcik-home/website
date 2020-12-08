@@ -42,6 +42,7 @@ jobs:
         uses: dokku/github-action@0.0.7
         env:
           CI_COMMIT: build
+          GIT_SSH_COMMAND: 'ssh -v'
         with:
           git_remote_url: 'ssh://dokku@home.supcik.net:25022/website'
           ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
