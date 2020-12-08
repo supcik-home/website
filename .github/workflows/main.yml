@@ -27,3 +27,17 @@ jobs:
           extended: true
       - name: Build
         run: hugo --minify
+      - name: Prepare deployment
+        run: |
+          git checkout --orphan build
+          git rm -rf --cached .
+          cp deployment/Dockerfile .
+          cp deployment/Caddyfile .
+          git add -f Dockerfile Caddyfile public/
+          git commit -m "prepare deployment"
+      - name: Push to dokku
+        uses: dokku/dokku@master
+        with:
+          branch: build
+          git_remote_url: 'ssh://dokku@home.supcik.net:25022/website'
+          ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
