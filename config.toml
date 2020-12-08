@@ -1,6 +1,6 @@
 baseURL = "https://home.supcik.net/"
 languageCode = "en-us"
-title = "Jacques's Home"
+title = "Jacques and Ludmila's Home"
 theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
@@ -16,4 +16,4 @@ PygmentsStyle = "monokai"
   dateformNumTime = "02-01-2006 15:04"
 
   # footerLeft = "Powered by <a href=\"http://gohugo.io\">Hugo</a>"
-  footerRight = "Theme by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
+  footerRight = "Theme \"hello-friend-ng\" by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
