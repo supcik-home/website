@@ -38,10 +38,10 @@ jobs:
           git add -f Dockerfile Caddyfile public/
           git commit -m "prepare deployment"
       - name: Push to dokku
-        uses: supcik/dokku-deploy-github-action-official@master
+        uses: dokku/github-action@0.0.10
         env:
           CI_COMMIT: build
         with:
           # git_push_flags: '-v'
-          git_remote_url: 'ssh://dokku@home.supcik.net:25022/website'
+          git_remote_url: 'ssh://dokku@${{ secrets.DOKKU_HOST }}/website'
           ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
